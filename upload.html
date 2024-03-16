@@ -5,7 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skin Disease Prediction</title>
     <style>
-        /* Your CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe0bd; /* Skin tone color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        label:hover {
+            background-color: #45a049;
+        }
+        #image-preview {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #result {
+            margin-top: 30px;
+        }
+        img {
+            max-width: 40%;
+            height: auto;
+        }
+        .predict-button {
+            background-color: #ff4d4d; /* Red color for the predict button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0; /* Center align */
+            width: 150px; /* Match the width with the "Choose an image" button */
+        }
+        .predict-button:hover {
+            background-color: #ff3333; /* Darker red on hover */
+        }
     </style>
 </head>
 <body>
