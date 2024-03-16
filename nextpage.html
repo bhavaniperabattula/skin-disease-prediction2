@@ -3,41 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Page</title>
+    <title>Melanoma Information</title>
     <style>
         body {
+            background-color: #ffe0bd; /* Skin tone color */
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3, h4 {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0; /* Solid background color */
         }
-
-        .content {
-            text-align: center;
+        p {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h3>Predicted: Melanoma</h3>
-<p>
-    <h3>Confidence: 99.84%</h3>
-    <h3>Symptoms:</h3>
-    <h4>
-        - Multiple colors within a mole<br>
-        - Bleeding or oozing from a mole
-    </h4>
-    <h3>Precautions:</h3>
-    <h4>
-        - Eat a balanced diet rich in antioxidants and vitamins<br>
-        - Avoid smoking and limit alcohol consumption
-    </h4>
-</p>
 
-        
-    </div>
+<div class="container">
+    <h3>Predicted: Melanoma</h3>
+    <p>
+        <h3>Confidence: 99.84%</h3>
+        <h3>Symptoms:</h3>
+        <h4>
+            1) Multiple colors within a mole<br>
+            2) Bleeding or oozing from a mole
+        </h4>
+        <h3>Precautions:</h3>
+        <h4>
+            1) Eat a balanced diet rich in antioxidants and vitamins<br>
+            2) Avoid smoking and limit alcohol consumption
+        </h4>
+    </p>
+</div>
+
 </body>
 </html>
