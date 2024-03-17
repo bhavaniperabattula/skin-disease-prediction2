@@ -1,4 +1,4 @@
-const form = document.getElementById('skin-disease-form');
+const form = document.getElementById('upload-form');
 const imageInput = document.getElementById('image-input');
 const predictionResultsDiv = document.getElementById('prediction-results');
 
