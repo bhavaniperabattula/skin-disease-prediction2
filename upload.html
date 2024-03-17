@@ -71,6 +71,7 @@
         <form id="upload-form">
             <label for="file">Choose an image</label>
             <input type="file" id="file" accept="image/*" onchange="previewImage(event)">
+            <span id="file-name"></span> <!-- This will display the filename -->
         </form>
         <div id="image-preview"></div>
         <button class="predict-button" onclick="redirectToNextPage()">Predict</button>
@@ -89,6 +90,8 @@
                 preview.appendChild(image);
             }
             reader.readAsDataURL(event.target.files[0]);
+            // Display filename
+            document.getElementById('Skin-Disease').innerText = event.target.files[0].name;
         }
         
         function redirectToNextPage() {
