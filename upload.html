@@ -68,18 +68,15 @@
 <body>
     <div class="container">
         <h1>Skin Disease Prediction</h1>
-        <body>
-  <form id="skin-disease-form">
-    <input type="file" id="image-input" accept="image/*">
-    <button type="submit">Predict Disease</button>
-  </form>
-
-  <div id="prediction-results"></div>
-
-  <script src="script.js"></script>
-        </body>
+        <form id="upload-form">
+            <label for="file">Choose an image</label>
+            <input type="file" id="file" accept="image/*" onchange="previewImage(event)">
+        </form>
+        <div id="image-preview"></div>
         <button class="predict-button" onclick="redirectToNextPage()">Predict</button>
     </div>
+    <div id="prediction-results"></div>
+    <script src="script.js"></script> 
 
     <script>
         function previewImage(event) {
