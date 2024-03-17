@@ -6,7 +6,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load your pre-trained deep learning model
-model = tf.keras.models.load_model('your_model_path')
+model = tf.keras.models.load_model('skin main project.ipynb')
 
 # Define class names for diseases (example)
 class_names = [4: ('nv', 'Melanocytic nevi', ['Sensitivity to touch around the mole', 'Redness or inflammation around the mole'],['Avoid tight Clothing','Limit exposure to direct sunlight']),
