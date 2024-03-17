@@ -66,38 +66,42 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Skin Disease Prediction</h1>
-        <form id="upload-form">
-            <label for="file">Choose an image</label>
-            <input type="file" id="file" accept="image/*" onchange="previewImage(event)">
-            <span id="file-name"></span> <!-- This will display the filename -->
-        </form>
-        <div id="image-preview"></div>
-        <button class="predict-button" onclick="redirectToNextPage()">Predict</button>
-    </div>
-    <div id="prediction-results"></div>
-    <script src="script.js"></script> 
+    <h1>Skin Disease Detection</h1>
+    <form id="upload-form">
+    <form id="upload-Form" enctype="multipart/form-data">
+        <input type="file" id="imageInput" accept="image/*" />
+        <button type="button" onclick="uploadImage()">Upload</button>
+    </form>
+    <div id="imagePreview"></div>
+    <div id="diseaseResult"></div>
 
     <script>
-        function previewImage(event) {
-            var reader = new FileReader();
-            reader.onload = function() {
-                var preview = document.getElementById('image-preview');
-                var image = document.createElement('img');
-                image.src = reader.result;
-                preview.innerHTML = '';
-                preview.appendChild(image);
-            }
-            reader.readAsDataURL(event.target.files[0]);
-            // Display filename
-            document.getElementById('Skin-Disease').innerText = event.target.files[0].name;
+        function uploadImage() {
+            var formData = new FormData();
+            var fileInput = document.getElementById('imageInput');
+            formData.append('image', fileInput.files[0]);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById('diseaseResult').innerText = result;
+            })
+            .catch(error => console.error('Error:', error));
         }
-        
-        function redirectToNextPage() {
-            // Redirect to the next page
-            window.location.href = 'nextpage.html';
-        }
+
+        document.getElementById('imageInput').addEventListener('change', function(event) {
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.innerHTML = '';
+            var file = event.target.files[0];
+            var img = document.createElement('img');
+            img.src = URL.createObjectURL(file);
+            img.width = 200;
+            img.height = 200;
+            imagePreview.appendChild(img);
+        });
     </script>
 </body>
 </html>
