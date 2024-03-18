@@ -34,7 +34,7 @@ classes = {
 # Define route for home page
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("nextpage.html")
 
 # Define route for image upload and prediction
 @app.route("/predict", methods=["POST"])
@@ -42,13 +42,13 @@ def predict():
     if request.method == "POST":
         # Check if a file was uploaded
         if "file" not in request.files:
-            return render_template("index.html", prediction="No file uploaded")
+            return render_template("nextpage.html", prediction="No file uploaded")
 
         file = request.files["file"]
 
         # Check if the file is empty
         if file.filename == "":
-            return render_template("index.html", prediction="No file selected")
+            return render_template("nextpage.html", prediction="No file selected")
 
         # Check if the file is valid
         if file:
