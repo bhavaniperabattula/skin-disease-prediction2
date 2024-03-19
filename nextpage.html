@@ -29,10 +29,7 @@
 
 <div class="container">
     <h2>Melanoma</h2>
-     <form action="/predict" method="post" enctype="multipart/form-data">
-          <input type="file" name="file" accept="image/*">
          <div>
-         {% if prediction %}
         <h3>Confidence: 99.84%</h3>
         <h3>Symptoms:</h3>
         <p>
@@ -44,7 +41,6 @@
             1) Eat a balanced diet rich in antioxidants and vitamins<br>
             2) Avoid smoking and limit alcohol consumption
         </p>
-         {% endif %}
     
 </div>
      </form>
