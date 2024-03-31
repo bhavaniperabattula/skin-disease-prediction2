@@ -69,7 +69,7 @@ def predict():
             confidence_percentage = max_prob * 100
 
             # Render prediction template with results
-            return render_template("index.html", prediction=disease_name,
+            return render_template("upload.html", prediction=disease_name,
                                    confidence=f"{confidence_percentage:.2f}%", symptoms=symptoms, precautions=precautions)
 
 
